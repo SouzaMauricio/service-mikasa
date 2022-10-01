@@ -160,7 +160,7 @@
 
 <script>
 import { required, email } from '@vuelidate/validators'
-import { reactive, toRef } from 'vue'
+import { reactive } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import * as ContactUsGateway from '../../gateway/armin/services/contactUs'
 import SnackBar from '../commons/SnackBar'
