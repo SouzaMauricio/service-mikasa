@@ -22,6 +22,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/vuex-persist.js', mode: 'client' },
+    { src: '~/plugins/vue-the-mask', mode: 'both' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -30,7 +32,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    '@nuxt/postcss8',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -41,8 +43,9 @@ export default {
   build: {
     postcss: {
       plugins: {
-        'postcss-custom-properties': false
-      }
+        tailwindcss: {},
+        autoprefixer: {}
+      },
     }
   },
   target: 'static'

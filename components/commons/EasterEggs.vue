@@ -17,7 +17,7 @@ export default {
 
   created () {
     if (new Date().getDay() !== 5) return
-    this.emitter.on('show-easter-egg-friday', this.showEasterEggs)
+    // this.emitter.on('show-easter-egg-friday', this.showEasterEggs)
   },
 
   data () {

@@ -227,7 +227,7 @@
             @click="checkGarages('2')"
           />
           <label
-            class="flex items-center justify-center w-8 h-8 text-sm font-medium transition-colors border border-gray-100 rounded-full shadow-sm cursor-pointer peer-checked:border-annie-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-annie-primary"
+            class="flex items-center justify-center w-8 h-8 text-sm font-medium transition-colors border border-gray-100 rounded-full shadow-sm cursor-pointer peer-checked:border-annie-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-annie-primary peer-checked:bg-annie-primary"
             for="garages_2"
           >
             <span>2</span>
@@ -273,9 +273,12 @@
 </template>
 
 <script>
+import { VMoney } from 'v-money'
 
 export default {
   name: 'SearchGeneral',
+
+  directives: { money : VMoney },
 
   data () {
     return {

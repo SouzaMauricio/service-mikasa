@@ -84,9 +84,7 @@
       </div>
 
       <!-- Endereço -->
-      <div
-        class=""
-      >
+      <div>
         <p>
           {{ property.localization.neighborhood }}, {{ property.localization.state }}
         </p>
