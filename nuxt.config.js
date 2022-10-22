@@ -17,7 +17,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     './tailwind.css',
-    './flickity.css',
     '@/assets/scss/modules/_icons',
     'viewerjs/dist/viewer.css'
   ],
