@@ -3,8 +3,7 @@
     class="bg-white border border-gray-200 rounded-lg shadow-md text-annie-text min-w-[340px] w-[340px] cursor-pointer"
     @click="redirectToProperty()"
   >
-    <div
-    >
+    <div>
       <img
         :src="property.pictures[0].fullPath"
         class="object-cover w-full h-72"
@@ -98,6 +97,7 @@
 
     </div>
     <div
+      v-if="localEnvironments"
       class="flex justify-between px-4 pb-4 text-sm font-medium text-annie-primary"
     >
       <div
@@ -173,24 +173,19 @@ export default {
     }
   },
 
-  mounted () {
-    this.init()
+  async fetch () {
+    let environments = {}
+    if (this.property.type === 'RELEASE') {
+      environments = this.setReleaseEnvironments(this.property)
+    } else {
+      environments = this.setGeneralEnvironments(this.property)
+    }
+    this.localEnvironments = environments
   },
 
   methods: {
-    init () {
-      this.setPropertyEnvironments(this.property)
-    },
-
-    setPropertyEnvironments (property) {
-      if (property.type === 'RELEASE') {
-        this.setReleaseEnvironments(property)
-        return
-      }
-      this.setGeneralEnvironments(property)
-    },
-
     setReleaseEnvironments (property) {
+      const localEnvironments = {}
       const environments = [
         'bedroom',
         'bathrooms',
@@ -208,34 +203,37 @@ export default {
         }, [])
         const unitEnvironmentFiltered = [...new Set(unitEnvironmentCount)]
         if (!unitEnvironmentFiltered[0]) {
-          this.localEnvironments[environment] = null
+          localEnvironments[environment] = null
           return
         }
         if (!unitEnvironmentFiltered[1]) {
-          this.localEnvironments[environment] = unitEnvironmentFiltered[0]
+          localEnvironments[environment] = unitEnvironmentFiltered[0]
           return
         }
         const max = Math.max(...unitEnvironmentFiltered)
         const min = Math.min(...unitEnvironmentFiltered)
-        this.localEnvironments[environment] = `${min} a ${max}`
+        localEnvironments[environment] = `${min} a ${max}`
       })
+      return localEnvironments
     },
     
     setGeneralEnvironments (property) {
-      this.localEnvironments.area = property.propertyArea
+      const localEnvironments = {}
+      localEnvironments.area = property.propertyArea
       for (let environment of Object.keys(property.environments)) {
         if (!property.environments[environment][0]) {
-          this.localEnvironments[environment] = null
+          localEnvironments[environment] = null
           continue
         }
         if (!property.environments[environment][1]) {
-          this.localEnvironments[environment] = property.environments[environment][0]
+          localEnvironments[environment] = property.environments[environment][0]
           continue
         }
         const max = Math.max(...property.environments[environment])
         const min = Math.min(...property.environments[environment])
-        this.localEnvironments[environment] = `${min} a ${max}`
+        localEnvironments[environment] = `${min} a ${max}`
       }
+      return localEnvironments
     },
 
     redirectToProperty () {

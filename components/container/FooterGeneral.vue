@@ -58,36 +58,36 @@
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-local_offer"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="/comprar"
           >
             Para Comprar
-          </router-link>
+          </NuxtLink>
         </div>
 
         <div
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-attach_money"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="/alugar"
           >
             Para Alugar
-          </router-link>
+          </NuxtLink>
         </div>
 
         <div
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-star_rate"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="lancamentos"
           >
             Lançamentos
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
 
@@ -105,36 +105,36 @@
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-house"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="fale-conosco?type=SELL_MY_PROPERTY"
           >
             Venda seu imóvel
-          </router-link>
+          </NuxtLink>
         </div>
 
         <div
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-apartment"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="contactUs?type=RENT_MY_PROPERTY"
           >
             Alugue seu imóvel
-          </router-link>
+          </NuxtLink>
         </div>
 
         <div
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-business_center"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="fale-conosco?type=PARTNERSHIPS"
           >
             Parcerias
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
 
@@ -185,24 +185,24 @@
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-support_agent"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="/fale-conosco"
           >
             Fale conosco
-          </router-link>
+          </NuxtLink>
         </div>
 
         <div
           class="flex items-center space-x-2"
         >
           <span class="text-xl text-white icon-security"></span>
-          <router-link
+          <NuxtLink
             class="text-lg text-medium"
             to="/politica-de-privacidade"
           >
             Política de Privacidade
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
     </div>

@@ -439,9 +439,9 @@ export default {
     }
   },
 
-  mounted () {
-    this.setQueryParams()
-    this.doSearch()
+  async fetch () {
+    await this.setQueryParams()
+    await this.doSearch()
   },
 
   methods: {

@@ -21,5 +21,3 @@ export default {
   }
 }
 </script>
-
-      :pathSearch="this.$route.query.search"

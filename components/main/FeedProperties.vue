@@ -30,24 +30,18 @@ export default {
     }
   },
 
-  mounted() {
-    this.init()
-  },
-
-  methods: {
-    async init () {
-      try {
-        this.loadingError = false
-        this.loading = true
-        const data = await SectionsGateway.find('show=true&sort=sequenceToShow')
-        this.sections = data.docs
-      } catch (error) {
-        this.loadingError = true
-        console.error('Error: ', error)
-      } finally {
-        this.loading = false
-      } 
-    }
+  async fetch() {
+    try {
+      this.loadingError = false
+      this.loading = true
+      const data = await SectionsGateway.find('show=true&sort=sequenceToShow')
+      this.sections = data.docs
+    } catch (error) {
+      this.loadingError = true
+      console.error('Error: ', error)
+    } finally {
+      this.loading = false
+    } 
   }
 }
 </script>

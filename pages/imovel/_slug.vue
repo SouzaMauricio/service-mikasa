@@ -22,10 +22,6 @@ export default {
     return {
       propertyCod: this.$route.params.slug    
     }
-  },
-
-  mounted () {
-    console.log(this.$route.params)
   }
 }
 

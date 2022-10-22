@@ -38,61 +38,32 @@
       class="sticky grid w-full grid-cols-1 gap-8 lg:items-start lg:grid-cols-3"
     >
       <div
-        class="lg:space-y-14 lg:col-span-2"
+        class="lg:space-y-10 lg:col-span-2"
       >
-        <div
-          class="space-y-4"
-        >
           <div
             v-if="property.pictures && property.pictures[0]"
-            class="w-auto space-y-10 lg:w-full"
+            class="w-auto lg:w-full"
           >
-            <v-swiper
-              :style="{
-                '--swiper-navigation-color': '#fff',
-                '--swiper-pagination-color': '#fff',
-              }"
-              :loop="true"
-              :spaceBetween="10"
-              :navigation="true"
-              :thumbs="{ swiper: thumbsSwiper }"
-              :modules="modules"
-              class="h-104 bg-annie-primary"
-            >
-              <v-swiper-slide
-                class="flex items-center justify-center"
-                v-for="(picture, index) of property.pictures"
-                :key="index"
+            <client-only>
+              <flickity
+                ref="flickity"
+                :options="flickityOptions"
+                class="max-h-104 h-104"
               >
-                <img
-                  class="max-h-104"
-                  :src="picture.fullPath"
-                  @click="showImageListModal(index)"
-                />
-              </v-swiper-slide>
-            </v-swiper>
-            <v-swiper
-              @swiper="setThumbsSwiper"
-              :loop="true"
-              :spaceBetween="20"
-              :slidesPerView="6"
-              :freeMode="false"
-              :modules="modules"
-              class="hidden md:block"
-            >
-              <v-swiper-slide
-                v-for="(picture, index) of property.pictures"
-                :key="index"
-              >
-                <img
-                  class="object-cover w-auto h-20"
-                  :src="picture.fullPath"
-                />
-              </v-swiper-slide>
-            </v-swiper>
+                <div
+                  class="flex items-center justify-center w-full h-full mx-1 md:w-4/6"
+                  v-for="(picture, index) of property.pictures"
+                  :key="index"
+                >
+                  <img
+                    class="object-cover w-full h-full"
+                    :src="picture.fullPath"
+                    @click="showImageListModal(index)"
+                  />
+                </div>
+              </flickity>
+            </client-only>
           </div>
-        </div>
-
         <div
           class="flex justify-between mt-8 text-sm font-medium text-annie-primary lg:mt-0 md:text-base"
         >
@@ -265,125 +236,131 @@
           </p>
         </div>
 
-        <div
-          class="p-4 border rounded-md"
-        >
-          <p
-            class="mb-4 text-lg font-medium"
-          >
-            Fale com o corretor
-          </p>
-          
+        <client-only>
           <div
-            class="space-y-4"
+            class="p-4 border rounded-md"
           >
-            <label
-              for="name"
-              class="block"
-            >
-              <p
-                class="text-sm"
-              >
-                Nome
-              </p>
-              <input
-                class="w-full border-gray-300 rounded-md focus:ring-0"
-                type="text"
-                name="name"
-                id="name"
-                v-model="contact.fullName"
-                :class="v$.contact.fullName.$errors[0] ? 'border-red-500' : 'border-gray-300'"
-              >
-            </label>
-            <label
-              for="email"
-              class="block"
-            >
-              <p
-                class="text-sm"
-              >
-                Email
-              </p>
-              <input
-                class="w-full border-gray-300 rounded-md focus:ring-0"
-                type="text"
-                name="email"
-                id="email"
-                v-model="contact.email"
-                :class="v$.contact.email.$errors[0] ? 'border-red-500' : 'border-gray-300'"
-              >
-            </label>
-            <label
-              for="phone"
-              class="block"
-            >
-              <p
-                class="text-sm"
-              >
-                Contato
-              </p>
-              <input
-                class="w-full border-gray-300 rounded-md focus:ring-0"
-                type="text"
-                name="phone"
-                id="phone"
-                v-mask="['(##) ####-####', '(##) #####-####']"
-                v-model="contact.contact"
-                :class="v$.contact.contact.$errors[0] ? 'border-red-500' : 'border-gray-300'"
-              >
-            </label>
-            <label
-              for="contact"
-              class="block"
-            >
-              <p
-                class="text-sm"
-              >
-                Preferência de contato
-              </p>
-              <select
-                class="w-full border-gray-300 rounded-md focus:ring-0"
-                name="contact"
-                id="contact"
-                v-model="contact.meanOfContact"
-                :class="v$.contact.meanOfContact.$errors[0] ? 'border-red-500' : 'border-gray-300'"
-              >
-                <option value="WHATSAPP">Whatsapp</option>
-                <option value="EMAIL">Email</option>
-                <option value="CALL">Ligação</option>
-              </select>
-            </label>
-          </div>
-          <div
-            class="flex items-center justify-between mt-4"
-          >
-            <button
-              class="flex items-center justify-center w-24 px-6 py-1 text-white rounded-full bg-annie-primary hover:opacity-90 disabled:opacity-75"
-              @click="makeAContact()"
-            >
-              <span
-                v-if="sendingContact"
-                class="w-6 h-6 text-2xl text-white animate-spin icon-spinner10"
-              >
-              </span>
-              <span
-                v-else
-              >
-                Enviar
-              </span>
-            </button>
-
             <p
-              class="text-xs"
+              class="mb-4 text-lg font-medium"
             >
-              Código do imóvel: {{ property.cod }}
+              Fale com o corretor
             </p>
+            
+            <div
+              class="space-y-4"
+            >
+              <label
+                for="name"
+                class="block"
+              >
+                <p
+                  class="text-sm"
+                >
+                  Nome
+                </p>
+                <input
+                  class="w-full border-gray-300 rounded-md focus:ring-0"
+                  type="text"
+                  name="name"
+                  id="name"
+                  v-model="contact.fullName"
+                  :class="contactFormError.fullName ? 'border-red-500' : 'border-gray-300'"
+                  @focusout="checkFormProperty('fullName')"
+                >
+              </label>
+              <label
+                for="email"
+                class="block"
+              >
+                <p
+                  class="text-sm"
+                >
+                  Email
+                </p>
+                <input
+                  class="w-full border-gray-300 rounded-md focus:ring-0"
+                  type="text"
+                  name="email"
+                  id="email"
+                  v-model="contact.email"
+                  :class="contactFormError.email ? 'border-red-500' : 'border-gray-300'"
+                  @focusout="checkFormProperty('email')"
+                >
+              </label>
+              <label
+                for="phone"
+                class="block"
+              >
+                <p
+                  class="text-sm"
+                >
+                  Contato
+                </p>
+                <input
+                  class="w-full border-gray-300 rounded-md focus:ring-0"
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  v-mask="['(##) ####-####', '(##) #####-####']"
+                  v-model="contact.contact"
+                  :class="contactFormError.contact ? 'border-red-500' : 'border-gray-300'"
+                  @focusout="checkFormProperty('contact')"
+                >
+              </label>
+              <label
+                for="contact"
+                class="block"
+              >
+                <p
+                  class="text-sm"
+                >
+                  Preferência de contato
+                </p>
+                <select
+                  class="w-full border-gray-300 rounded-md focus:ring-0"
+                  name="contact"
+                  id="contact"
+                  v-model="contact.meanOfContact"
+                  :class="contactFormError.meanOfContact ? 'border-red-500' : 'border-gray-300'"
+                  @focusout="checkFormProperty('meanOfContact')"
+                >
+                  <option value="WHATSAPP">Whatsapp</option>
+                  <option value="EMAIL">Email</option>
+                  <option value="CALL">Ligação</option>
+                </select>
+              </label>
+            </div>
+            <div
+              class="flex items-center justify-between mt-4"
+            >
+              <button
+                class="flex items-center justify-center w-24 px-6 py-1 text-white rounded-full bg-annie-primary hover:opacity-90 disabled:opacity-75"
+                @click="makeAContact()"
+              >
+                <span
+                  v-if="sendingContact"
+                  class="w-6 h-6 text-2xl text-white animate-spin icon-spinner10"
+                >
+                </span>
+                <span
+                  v-else
+                >
+                  Enviar
+                </span>
+              </button>
+
+              <p
+                class="text-xs"
+              >
+                Código do imóvel: {{ property.cod }}
+              </p>
+            </div>
           </div>
-        </div>
+        </client-only>
       </div>
 
       <div
-        class="lg:col-span-2 lg:-mt-50 text-annie-text lg:space-y-10"
+        class="lg:col-span-2 lg:-mt-32 text-annie-text lg:space-y-10"
       >
         <div>
           <p
@@ -751,18 +728,14 @@
     </CustomModal>
   </section>
 </template>
-
 <script>
 import * as ContactGateway from '../../gateway/armin/services/contacts'
 import SnackBar from '../commons/SnackBar'
 import LoadingSpin from '../commons/LoadingSpin'
-import {FreeMode,Navigation,Thumbs} from 'swiper'
 import CustomModal from '../commons/CustomModal'
 import * as PropertyGateway from '../../gateway/armin/services/properties'
-import { required, email } from '@vuelidate/validators'
-import { reactive } from 'vue'
-import useVuelidate from '@vuelidate/core'
 import { formatPtBrCurrency } from '../../services/formatCurrency'
+import * as EmailValidator from 'email-validator'
 
 export default {
   name: 'PropertyContent',
@@ -780,50 +753,57 @@ export default {
     LoadingSpin
   },
 
-
-  setup () {
-    const state = reactive({
-      contact: {
-        fullName: '',
-        email: '',
-        contact: '',
-        meanOfContact: ''
-      }
-    })
-    const rules = {
-      contact: {
-        fullName: {
-          required
+  head() {
+    return {
+      title: `${this.property.title || this.propertyCod} | Andréia Negócios Imobiliários`,
+      meta: [
+        //Google
+        {
+          itemprop: 'name',
+          content: 'Andréia Negócios Imobiliários'
         },
-        email: {
-          required,
-          email
+        {
+          itemprop: 'description',
+          content: this.property.description
         },
-        contact: {
-          required
+        //Whataspp/Facebook
+        {
+          property: 'og:site_name',
+          content: 'Andréia Negócios Imobiliários'
         },
-        meanOfContact: {
-          required
+        {
+          property: 'og:title',
+          content: `${this.property.title} | Andréia Negócios Imobiliários`
+        },
+        {
+          property: 'og:description',
+          content: this.property.description
+        },
+        {
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          property: 'og:image',
+          content: this.property.pictures[0].fullPath
         }
-      }
+      ]
     }
-    const v$ = useVuelidate(rules, state, { $lazy: true })
-    return { state, v$ }
   },
 
   data () {
     return {
       showImageGallery: false,
       iconTest:'text-xl icon-cutlery',
-      property: {},
+      property: {
+        pictures: [{ fullPath: '' }]
+      },
       typeLabels: {
         'APARTMENT': 'Apartamento',
         'HOUSE_IN_CONDOMINIUM': 'Casa',
         'PRIVATE_HOUSE': 'Casa',
         'RELEASE': 'Lançamento',
       },
-      thumbsSwiper: null,
-      modules: [FreeMode,Navigation,Thumbs],
       showUnitImage: {
         show: false,
         image: null
@@ -840,6 +820,12 @@ export default {
         email: '',
         contact: '',
         meanOfContact: ''
+      },
+      contactFormError: {
+        fullName: false,
+        email: false,
+        contact: false,
+        meanOfContact: false
       },
       loading: false,
       loadingError: false,
@@ -860,6 +846,12 @@ export default {
         fullscreen: false,
         keyboard: true,
         initialViewIndex: 0
+      },
+      flickityOptions: {
+        initialIndex: 0,
+        prevNextButtons: true,
+        pageDots: false,
+        wrapAround: true
       }
     }
   },
@@ -884,15 +876,18 @@ export default {
   //   }
   // },
   
-  mounted () {
-    this.init()
+  async fetch () {
+    await this.init()
   },
 
   methods: {
-    setThumbsSwiper (swiper) {
-      this.thumbsSwiper = swiper
+    next() {
+      this.$refs.flickity.next()
     },
-
+    
+    previous() {
+      this.$refs.flickity.previous()
+    },
     async init () {
       try {
         this.loading = true
@@ -986,8 +981,8 @@ export default {
     },
 
     async makeAContact () {
-      this.v$.$touch()
-      if (this.v$.$invalid) {
+      const hasErrors = this.hasFormErrors()
+      if (hasErrors) {
         this.snackBar.message = 'Preencha o formulário corretamente'
         this.snackBar.show = true
         return
@@ -1022,7 +1017,7 @@ export default {
       this.contact.email = ''
       this.contact.contact = ''
       this.contact.meanOfContact = ''
-      this.v$.$reset()
+      this.clearFormValidate()
     },
 
     addToFavorite () {
@@ -1079,6 +1074,29 @@ export default {
         images: this.images,
         options: this.imageOptions
       })
+    },
+    
+    clearFormValidate () {
+      for(const key in this.contactFormError) {
+        this.contactFormError[key] = false
+      }
+    },
+
+    checkFormProperty (prop) {
+      this.contactFormError[prop] = this.validateProp(prop)
+    },
+
+    validateProp (prop) {
+      if (!this.contact[prop]) return true
+      if (prop !== 'email') return false
+      return !EmailValidator.validate(this.contact[prop])
+    },
+
+    hasFormErrors () {
+      for(const key in this.contactFormError) {
+        this.checkFormProperty(key)
+      }
+      return !Object.values(this.contactFormError).every((value) => value === false)
     }
   }
 }

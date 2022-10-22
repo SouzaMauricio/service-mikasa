@@ -70,31 +70,25 @@ export default {
     }
   },
 
-  mounted () {
-    this.init()
-  },
-
-  methods: {
-    async init () {
-      try {
-        this.loadingError = false
-        this.loading = true
-        this.propertiesList = []
-        const fields = 'fields=docs(_id,title,description,toRent,toSell,price,pictures(fullPath),localization(state,neighborhood),condominium(price,name),release,environments,propertyArea,type,cod'
-        const params = `${fields}&show=true&ids=${this.section.propertyList.join(',')}`
-        const properties = await PropertiesGateway.find(params)
-        this.section.propertyList.forEach(propertyId => {
-          const currentProperty = properties.docs.find(property => property._id.toString() === propertyId.toString())
-          if (!currentProperty) return
-          this.propertiesList.push(currentProperty)
-        })
-      } catch (error) {
-        this.loadingError = true
-        console.error('Error: ', error)
-      } finally {
-        this.loading = false
-      } 
-    }
+  async fetch () {
+    try {
+      this.loadingError = false
+      this.loading = true
+      this.propertiesList = []
+      const fields = 'fields=docs(_id,title,description,toRent,toSell,price,pictures(fullPath),localization(state,neighborhood),condominium(price,name),release,environments,propertyArea,type,cod'
+      const params = `${fields}&show=true&ids=${this.section.propertyList.join(',')}`
+      const properties = await PropertiesGateway.find(params)
+      this.section.propertyList.forEach(propertyId => {
+        const currentProperty = properties.docs.find(property => property._id.toString() === propertyId.toString())
+        if (!currentProperty) return
+        this.propertiesList.push(currentProperty)
+      })
+    } catch (error) {
+      this.loadingError = true
+      console.error('Error: ', error)
+    } finally {
+      this.loading = false
+    } 
   }
 }
 </script>

@@ -14,10 +14,6 @@ import PrivacyPolicy from '../components/policy/PrivacyPolicy'
 export default {
   name: 'PrivacyPolicyScreen',
 
-  data() {
-    return {}
-  },
-
   head() {
     return {
       title: 'Política de Privacidade | Andréia Negócios Imobiliários',

@@ -61,7 +61,7 @@ export default {
     }
   },
 
-  mounted () {
+  async fetch () {
     this.propertiesList = this.$store.getters.getFavoritesList
   }
 }

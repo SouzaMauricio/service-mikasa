@@ -41,7 +41,7 @@
         </svg>
       </button>
     </div>
-    <router-link
+    <NuxtLink
       to="/"
       class="flex md:hidden"
     >
@@ -50,12 +50,12 @@
         class="h-12"
         alt=""
       >
-    </router-link>
+    </NuxtLink>
     <div
       id="left-menu"
       class="items-center hidden space-x-4 font-medium text-annie-second md:flex"
     >
-      <router-link
+      <NuxtLink
         to="/"
         class="flex"
       >
@@ -64,29 +64,29 @@
           class="h-12"
           alt=""
         >
-      </router-link>
-      <router-link
+      </NuxtLink>
+      <NuxtLink
         to="/alugar"
       >
         Imóveis para alugar
-      </router-link>
-      <router-link
+      </NuxtLink>
+      <NuxtLink
         to="/comprar"
       >
         Imóveis para compar
-      </router-link>
-      <router-link
+      </NuxtLink>
+      <NuxtLink
         to="/lancamentos"
       >
         Lançamentos
-      </router-link>
+      </NuxtLink>
     </div>
 
     <div
       id="right-menu"
       class="flex items-center w-20 space-x-4 font-medium text-annie-second lg:w-max"
     >
-      <router-link
+      <NuxtLink
         to="/fale-conosco"
         class="flex space-x-2"
       >
@@ -96,9 +96,9 @@
         >
           Fale conosco
         </p>
-      </router-link>
+      </NuxtLink>
 
-      <router-link
+      <NuxtLink
         to="/favoritos"
         class="text-2xl"
       >
@@ -120,7 +120,7 @@
             </p>
           </div>
         </div>
-      </router-link>
+      </NuxtLink>
     </div>
 
     <!-- MENU SIDE -->
@@ -134,32 +134,32 @@
         <li
           class="py-4"
         >
-          <router-link
+          <NuxtLink
             to="/alugar"
             @click="showMenu = false"
           >
             Imóveis para alugar
-          </router-link>
+          </NuxtLink>
         </li>
         <li
           class="py-4"
         >
-          <router-link
+          <NuxtLink
             to="/comprar"
             @click="showMenu = false"
           >
             Imóveis para compar
-          </router-link>
+          </NuxtLink>
         </li>
         <li
           class="py-4"
         >
-          <router-link
+          <NuxtLink
             to="/lancamentos"
             @click="showMenu = false"
           >
             Lançamentos
-          </router-link>
+          </NuxtLink>
         </li>
       </ul>
     </div>
