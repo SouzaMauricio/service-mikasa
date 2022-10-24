@@ -23,7 +23,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/vuex-persist.js', mode: 'client' },
+    { src: '~/plugins/vuex-persist.js', mode: 'client', ssr: false },
     { src: '~/plugins/vue-the-mask', mode: 'client' },
     { src: '~/plugins/v-viewer', mode: 'client' },
     { src: '~/plugins/vue-flickity.js', ssr: false }

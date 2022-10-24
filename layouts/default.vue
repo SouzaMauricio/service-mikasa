@@ -10,11 +10,13 @@
         <Nuxt />
       </div>
     </div>
-
-    <PrivacyPolicyAccept
-      v-if="!$store.getters.isPrivacyPolicyAccepted || $store.getters.showUpdatePrivacyPolicy"
-      :show-update-policy="$store.getters.showUpdatePrivacyPolicy"
-    />
+    
+    <client-only>
+      <PrivacyPolicyAccept
+        v-if="$store && !$store.getters.isPrivacyPolicyAccepted || $store.getters.showUpdatePrivacyPolicy"
+        :show-update-policy="$store.getters.showUpdatePrivacyPolicy"
+      />
+    </client-only>
     <EasterEggs />
     <FooterGeneral
       class="bottom-0"
