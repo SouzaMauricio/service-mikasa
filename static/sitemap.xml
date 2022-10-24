@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://www.corretoraandreia.com.br/</loc>
+      <loc>https://www.corretoraandreia.com.br</loc>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.corretoraandreia.com.br/release?search=barueri</loc>
+      <loc>https://corretoraandreia.com.br/comprar?search=barueri</loc>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.corretoraandreia.com.br/release</loc>
+      <loc>https://www.corretoraandreia.com.br/lancamentos</loc>
       <priority>0.8</priority>
    </url>
-
    <url>
-      <loc>https://www.corretoraandreia.com.br/sell</loc>
+      <loc>https://www.corretoraandreia.com.br/comprar</loc>
       <priority>0.8</priority>
    </url>
-
    <url>
       <loc>https://corretoraandreia.com.br/imovel/AP22101</loc>
-      <priority>1.0/<priority>
+      <priority>1.0/</priority>
    </url>
 </urlset>
