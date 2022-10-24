@@ -1,61 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
    <url>
-
       <loc>https://www.corretoraandreia.com.br/</loc>
-
-      <lastmod>2022-08-12</lastmod>
-
-      <changefreq>monthly</changefreq>
-
       <priority>1.0</priority>
-
    </url>
-
    <url>
-
       <loc>https://www.corretoraandreia.com.br/release?search=barueri</loc>
-
-      <lastmod>2022-08-12</lastmod>
-
-      <changefreq>monthly</changefreq>
-
       <priority>1.0</priority>
    </url>
-
    <url>
-
       <loc>https://www.corretoraandreia.com.br/release</loc>
-
-      <lastmod>2022-08-12</lastmod>
-
-      <changefreq>monthly</changefreq>
-
       <priority>0.8</priority>
    </url>
 
    <url>
-
       <loc>https://www.corretoraandreia.com.br/sell</loc>
-
-      <lastmod>2022-08-12</lastmod>
-
-      <changefreq>monthly</changefreq>
-
       <priority>0.8</priority>
    </url>
 
    <url>
-
-      <loc>https://www.corretoraandreia.com.br/property/RL220811</loc>
-
-      <lastmod>2022-08-12</lastmod>
-
-      <changefreq>monthly</changefreq>
-
+      <loc>https://corretoraandreia.com.br/imovel/AP22101</loc>
       <priority>1.0/<priority>
    </url>
-
 </urlset>
