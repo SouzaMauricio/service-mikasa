@@ -50,6 +50,6 @@ export default {
         autoprefixer: {}
       },
     }
-  }
-  // target: 'static'
+  },
+  target: 'static'
 }
