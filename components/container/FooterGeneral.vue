@@ -119,7 +119,7 @@
           <span class="text-xl text-white icon-apartment"></span>
           <NuxtLink
             class="text-lg text-medium"
-            to="contactUs?type=RENT_MY_PROPERTY"
+            to="fale-conosco?type=RENT_MY_PROPERTY"
           >
             Alugue seu imóvel
           </NuxtLink>

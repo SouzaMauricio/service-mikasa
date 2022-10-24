@@ -329,7 +329,6 @@ export default {
 
   directives: { money : VMoney },
 
-
   head() {
     return {
       title: `${this.getPageTitle()} | Andréia Negócios Imobiliários`,
@@ -458,8 +457,8 @@ export default {
       let params = ''
       params += this.search.bedrooms ? `bedrooms=${this.search.bedrooms}` : ''
       params += this.search.garages ? `&garages=${this.search.garages}` : ''
-      params += this.search.minValue !== 'R$ 0,00' ? `&minValue=${this.search.minValue.replace('R$ ', '').replace('.', '').replace(',', '.')}` : ''
-      params += this.search.maxValue !== 'R$ 0,00' ? `&maxValue=${this.search.maxValue.replace('R$ ', '').replace('.', '').replace(',', '.')}` : ''
+      params += this.search.minValue && this.search.minValue !== 'R$ 0,00' ? `&minValue=${this.search.minValue.replace('R$ ', '').replace('.', '').replace(',', '.')}` : ''
+      params += this.search.maxValue && this.search.maxValue !== 'R$ 0,00' ? `&maxValue=${this.search.maxValue.replace('R$ ', '').replace('.', '').replace(',', '.')}` : ''
       params += this.search.search ? `&search=${this.search.search}` : ''
       params += '&show=true'
       if (this.type === 'rent') params += '&toRent=true'

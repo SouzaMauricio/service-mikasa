@@ -753,9 +753,9 @@ export default {
     LoadingSpin
   },
 
-  head() {
+  head () {
     return {
-      title: `${this.property.title || this.propertyCod} | Andréia Negócios Imobiliários`,
+      title: this.property.title,
       meta: [
         //Google
         {
@@ -773,7 +773,7 @@ export default {
         },
         {
           property: 'og:title',
-          content: `${this.property.title} | Andréia Negócios Imobiliários`
+          content: this.property.title
         },
         {
           property: 'og:description',
@@ -856,38 +856,11 @@ export default {
     }
   },
 
-  // validations () {
-  //   return {
-  //     contact: {
-  //       fullName: {
-  //         required
-  //       },
-  //       email: {
-  //         required,
-  //         email
-  //       },
-  //       contact: {
-  //         required
-  //       },
-  //       meanOfContact: {
-  //         required
-  //       }
-  //     }
-  //   }
-  // },
-  
   async fetch () {
     await this.init()
   },
 
   methods: {
-    next() {
-      this.$refs.flickity.next()
-    },
-    
-    previous() {
-      this.$refs.flickity.previous()
-    },
     async init () {
       try {
         this.loading = true

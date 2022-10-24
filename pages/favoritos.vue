@@ -2,9 +2,11 @@
   <div
     class="flex justify-center w-full h-full"
   >
-    <FavoritesList
-      class="max-w-max-content"
-    />
+    <client-only>
+      <FavoritesList
+        class="max-w-max-content"
+      />
+    </client-only>
   </div>
 </template>
 

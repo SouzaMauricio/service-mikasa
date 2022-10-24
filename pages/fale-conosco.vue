@@ -14,7 +14,6 @@ import ContactUsForm from '../components/contact/ContactUsForm'
 export default {
   name: 'ContactUsScreen',
 
-
   head() {
     return {
       title: 'Fale Conosco | Andréia Negócios Imobiliários',
