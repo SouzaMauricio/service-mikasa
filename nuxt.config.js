@@ -40,6 +40,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/amp'
+    // '@nuxtjs/sitemap'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -51,5 +53,14 @@ export default {
       },
     }
   },
+  amp: {
+    origin: 'https://www.corretoraandreia.com.br',
+    mode: false,
+    validator: false,
+    removeInlineStyles: false
+  },
+  // sitemap: {
+  //   hostname: 'https://example.com',
+  // },
   target: 'static'
 }
