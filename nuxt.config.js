@@ -53,12 +53,12 @@ export default {
       },
     }
   },
-  amp: {
-    origin: 'https://www.corretoraandreia.com.br',
-    mode: false,
-    validator: false,
-    removeInlineStyles: false
-  },
+  // amp: {
+  //   origin: 'https://www.corretoraandreia.com.br',
+  //   mode: false,
+  //   validator: false,
+  //   removeInlineStyles: false
+  // },
   // sitemap: {
   //   hostname: 'https://example.com',
   // },
