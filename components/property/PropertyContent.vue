@@ -786,10 +786,6 @@ export default {
         {
           property: 'og:image',
           content: this.property.pictures[0].fullPath
-        },
-        {
-          property: 'og:image',
-          content: this.property.pictures[1].fullPath
         }
       ]
     }
