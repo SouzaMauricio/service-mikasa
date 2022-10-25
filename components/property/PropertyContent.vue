@@ -755,7 +755,7 @@ export default {
 
   head () {
     return {
-      title: this.property.title,
+      title: this.property.title + ' | Andréia Negócios Imobiliários',
       meta: [
         //Google
         {
@@ -773,7 +773,7 @@ export default {
         },
         {
           property: 'og:title',
-          content: this.property.title
+          content: this.property.title + ' | Andréia Negócios Imobiliários'
         },
         {
           property: 'og:description',

@@ -9,7 +9,7 @@
         class="justify-self-center"
       >
         <img
-          src="../../assets/logo/logo_branco.png"
+          :src="require('../../assets/logo/logo_branco.png')"
           class="h-20"
           alt=""
         >
