@@ -5,7 +5,7 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://corretoraandreia.com.br/comprar?search=barueri</loc>
+      <loc>https://www.corretoraandreia.com.br/comprar?search=barueri</loc>
       <priority>1.0</priority>
    </url>
    <url>
@@ -22,6 +22,10 @@
    </url>
    <url>
       <loc>https://www.corretoraandreia.com.br/imovel/AP22101</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.corretoraandreia.com.br/imovel/novare-alphaville-AP22101</loc>
       <priority>1.0</priority>
    </url>
 </urlset>
