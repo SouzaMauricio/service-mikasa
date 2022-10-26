@@ -136,7 +136,7 @@
         >
           <NuxtLink
             to="/alugar"
-            @click="showMenu = false"
+            @click.native="showMenu = false"
           >
             Imóveis para alugar
           </NuxtLink>
@@ -146,7 +146,7 @@
         >
           <NuxtLink
             to="/comprar"
-            @click="showMenu = false"
+            @click.native="showMenu = false"
           >
             Imóveis para compar
           </NuxtLink>
@@ -156,7 +156,7 @@
         >
           <NuxtLink
             to="/lancamentos"
-            @click="showMenu = false"
+            @click.native="showMenu = false"
           >
             Lançamentos
           </NuxtLink>
