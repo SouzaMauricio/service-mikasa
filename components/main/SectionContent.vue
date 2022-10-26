@@ -75,7 +75,7 @@ export default {
       this.loadingError = false
       this.loading = true
       this.propertiesList = []
-      const fields = 'fields=docs(_id,title,description,toRent,toSell,price,pictures(fullPath),localization(state,neighborhood),condominium(price,name),release,environments,propertyArea,type,cod'
+      const fields = 'fields=docs(codSearch,_id,title,description,toRent,toSell,price,pictures(fullPath),localization(state,neighborhood),condominium(price,name),release,environments,propertyArea,type,cod'
       const params = `${fields}&show=true&ids=${this.section.propertyList.join(',')}`
       const properties = await PropertiesGateway.find(params)
       this.section.propertyList.forEach(propertyId => {

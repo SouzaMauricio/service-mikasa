@@ -237,7 +237,7 @@ export default {
     },
 
     redirectToProperty () {
-      this.$router.push(`/imovel/${this.property.cod}`)
+      this.$router.push(`/imovel/${this.property.codSearch}`)
     },
 
     formatCurrency (value) {

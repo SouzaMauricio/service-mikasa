@@ -464,7 +464,7 @@ export default {
       if (this.type === 'rent') params += '&toRent=true'
       if (this.type === 'sell') params += '&toSell=true'
       if (this.type === 'release') params += '&type=release'
-      const fields = 'fields=docs(title,description,toRent,toSell,price,pictures(fullPath),localization(state,neighborhood),condominium(price,name),release,environments,propertyArea,type,cod'
+      const fields = 'fields=docs(codSearch,title,description,toRent,toSell,price,pictures(fullPath),localization(state,neighborhood),condominium(price,name),release,environments,propertyArea,type,cod'
       return `${fields}&${params}`
     },
 
