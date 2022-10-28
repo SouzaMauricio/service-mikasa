@@ -35,10 +35,10 @@
     </div>
     <div
       v-if="!loading && !loadingError && !unauthorized"
-      class="sticky grid w-full grid-cols-1 gap-8 lg:items-start lg:grid-cols-3"
+      class="sticky grid w-full gap-8 lg:items-start lg:grid-cols-3"
     >
       <div
-        class="lg:space-y-10 lg:col-span-2"
+        class="lg:space-y-10 lg:col-span-2 lg:row-span-1"
       >
           <div
             v-if="property.pictures && property.pictures[0]"
@@ -142,7 +142,7 @@
       </div>
 
       <div
-        class="top-0 h-full space-y-5 lg:top-24 lg:sticky"
+        class="top-0 h-auto space-y-5 lg:h-full lg:top-24 lg:row-span-3"
       >
         <div
           class="flex items-center justify-between w-full space-y-0"
@@ -236,131 +236,129 @@
           </p>
         </div>
 
-        <client-only>
-          <div
-            class="p-4 border rounded-md"
+        <div
+          class="top-0 p-4 border rounded-md lg:sticky lg:top-24"
+        >
+          <p
+            class="mb-4 text-lg font-medium"
           >
-            <p
-              class="mb-4 text-lg font-medium"
+            Fale com o corretor
+          </p>
+          
+          <div
+            class="space-y-4"
+          >
+            <label
+              for="name"
+              class="block"
             >
-              Fale com o corretor
-            </p>
-            
-            <div
-              class="space-y-4"
-            >
-              <label
-                for="name"
-                class="block"
-              >
-                <p
-                  class="text-sm"
-                >
-                  Nome
-                </p>
-                <input
-                  class="w-full border-gray-300 rounded-md focus:ring-0"
-                  type="text"
-                  name="name"
-                  id="name"
-                  v-model="contact.fullName"
-                  :class="contactFormError.fullName ? 'border-red-500' : 'border-gray-300'"
-                  @focusout="checkFormProperty('fullName')"
-                >
-              </label>
-              <label
-                for="email"
-                class="block"
-              >
-                <p
-                  class="text-sm"
-                >
-                  Email
-                </p>
-                <input
-                  class="w-full border-gray-300 rounded-md focus:ring-0"
-                  type="text"
-                  name="email"
-                  id="email"
-                  v-model="contact.email"
-                  :class="contactFormError.email ? 'border-red-500' : 'border-gray-300'"
-                  @focusout="checkFormProperty('email')"
-                >
-              </label>
-              <label
-                for="phone"
-                class="block"
-              >
-                <p
-                  class="text-sm"
-                >
-                  Contato
-                </p>
-                <input
-                  class="w-full border-gray-300 rounded-md focus:ring-0"
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  v-mask="['(##) ####-####', '(##) #####-####']"
-                  v-model="contact.contact"
-                  :class="contactFormError.contact ? 'border-red-500' : 'border-gray-300'"
-                  @focusout="checkFormProperty('contact')"
-                >
-              </label>
-              <label
-                for="contact"
-                class="block"
-              >
-                <p
-                  class="text-sm"
-                >
-                  Preferência de contato
-                </p>
-                <select
-                  class="w-full border-gray-300 rounded-md focus:ring-0"
-                  name="contact"
-                  id="contact"
-                  v-model="contact.meanOfContact"
-                  :class="contactFormError.meanOfContact ? 'border-red-500' : 'border-gray-300'"
-                  @focusout="checkFormProperty('meanOfContact')"
-                >
-                  <option value="WHATSAPP">Whatsapp</option>
-                  <option value="EMAIL">Email</option>
-                  <option value="CALL">Ligação</option>
-                </select>
-              </label>
-            </div>
-            <div
-              class="flex items-center justify-between mt-4"
-            >
-              <button
-                class="flex items-center justify-center w-24 px-6 py-1 text-white rounded-full bg-annie-primary hover:opacity-90 disabled:opacity-75"
-                @click="makeAContact()"
-              >
-                <span
-                  v-if="sendingContact"
-                  class="w-6 h-6 text-2xl text-white animate-spin icon-spinner10"
-                >
-                </span>
-                <span
-                  v-else
-                >
-                  Enviar
-                </span>
-              </button>
-
               <p
-                class="text-xs"
+                class="text-sm"
               >
-                Código do imóvel: {{ property.cod }}
+                Nome
               </p>
-            </div>
+              <input
+                class="w-full border-gray-300 rounded-md focus:ring-0"
+                type="text"
+                name="name"
+                id="name"
+                v-model="contact.fullName"
+                :class="contactFormError.fullName ? 'border-red-500' : 'border-gray-300'"
+                @focusout="checkFormProperty('fullName')"
+              >
+            </label>
+            <label
+              for="email"
+              class="block"
+            >
+              <p
+                class="text-sm"
+              >
+                Email
+              </p>
+              <input
+                class="w-full border-gray-300 rounded-md focus:ring-0"
+                type="text"
+                name="email"
+                id="email"
+                v-model="contact.email"
+                :class="contactFormError.email ? 'border-red-500' : 'border-gray-300'"
+                @focusout="checkFormProperty('email')"
+              >
+            </label>
+            <label
+              for="phone"
+              class="block"
+            >
+              <p
+                class="text-sm"
+              >
+                Contato
+              </p>
+              <input
+                class="w-full border-gray-300 rounded-md focus:ring-0"
+                type="text"
+                name="phone"
+                id="phone"
+                v-mask="['(##) ####-####', '(##) #####-####']"
+                v-model="contact.contact"
+                :class="contactFormError.contact ? 'border-red-500' : 'border-gray-300'"
+                @focusout="checkFormProperty('contact')"
+              >
+            </label>
+            <label
+              for="contact"
+              class="block"
+            >
+              <p
+                class="text-sm"
+              >
+                Preferência de contato
+              </p>
+              <select
+                class="w-full border-gray-300 rounded-md focus:ring-0"
+                name="contact"
+                id="contact"
+                v-model="contact.meanOfContact"
+                :class="contactFormError.meanOfContact ? 'border-red-500' : 'border-gray-300'"
+                @focusout="checkFormProperty('meanOfContact')"
+              >
+                <option value="WHATSAPP">Whatsapp</option>
+                <option value="EMAIL">Email</option>
+                <option value="CALL">Ligação</option>
+              </select>
+            </label>
           </div>
-        </client-only>
+          <div
+            class="flex items-center justify-between mt-4"
+          >
+            <button
+              class="flex items-center justify-center w-24 px-6 py-1 text-white rounded-full bg-annie-primary hover:opacity-90 disabled:opacity-75"
+              @click="makeAContact()"
+            >
+              <span
+                v-if="sendingContact"
+                class="w-6 h-6 text-2xl text-white animate-spin icon-spinner10"
+              >
+              </span>
+              <span
+                v-else
+              >
+                Enviar
+              </span>
+            </button>
+
+            <p
+              class="text-xs"
+            >
+              Código do imóvel: {{ property.cod }}
+            </p>
+          </div>
+        </div>
       </div>
 
       <div
-        class="lg:col-span-2 lg:-mt-32 text-annie-text lg:space-y-10"
+        class="lg:col-span-2 text-annie-text lg:space-y-10 lg:row-span-1"
       >
         <div>
           <p
