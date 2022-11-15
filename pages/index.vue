@@ -14,7 +14,7 @@ export default {
 
   head() {
     return {
-      title: 'Andréia Negócios Imobiliários',
+      title: 'Corretora Andréia Santos',
       meta: [
         {
           hid: 'description',

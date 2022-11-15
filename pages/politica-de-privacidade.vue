@@ -16,12 +16,12 @@ export default {
 
   head () {
     return {
-      title: 'Política de Privacidade | Andréia Negócios Imobiliários',
+      title: 'Política de Privacidade | Corretora Andréia Santos',
       meta: [
         //Google
         {
           itemprop: 'name',
-          content: 'Andréia Negócios Imobiliários'
+          content: 'Corretora Andréia Santos'
         },
         {
           itemprop: 'description',
@@ -30,11 +30,11 @@ export default {
         //Whataspp/Facebook
         {
           property: 'og:site_name',
-          content: 'Andréia Negócios Imobiliários'
+          content: 'Corretora Andréia Santos'
         },
         {
           property: 'og:title',
-          content: 'Política de Privacidade | Andréia Negócios Imobiliários'
+          content: 'Política de Privacidade | Corretora Andréia Santos'
         },
         {
           property: 'og:description',

@@ -753,12 +753,12 @@ export default {
 
   head () {
     return {
-      title: this.property.title + ' | Andréia Negócios Imobiliários',
+      title: this.property.title + ' | Corretora Andréia Santos',
       meta: [
         //Google
         {
           itemprop: 'name',
-          content: 'Andréia Negócios Imobiliários'
+          content: 'Corretora Andréia Santos'
         },
         {
           itemprop: 'description',
@@ -767,11 +767,11 @@ export default {
         //Whataspp/Facebook
         {
           property: 'og:site_name',
-          content: 'Andréia Negócios Imobiliários'
+          content: 'Corretora Andréia Santos'
         },
         {
           property: 'og:title',
-          content: this.property.title + ' | Andréia Negócios Imobiliários'
+          content: this.property.title + ' | Corretora Andréia Santos'
         },
         {
           property: 'og:description',

@@ -16,12 +16,12 @@ export default {
 
   head() {
     return {
-      title: 'Fale Conosco | Andréia Negócios Imobiliários',
+      title: 'Fale Conosco | Corretora Andréia Santos',
       meta: [
         //Google
         {
           itemprop: 'name',
-          content: 'Andréia Negócios Imobiliários'
+          content: 'Corretora Andréia Santos'
         },
         {
           itemprop: 'description',
@@ -30,11 +30,11 @@ export default {
         //Whataspp/Facebook
         {
           property: 'og:site_name',
-          content: 'Andréia Negócios Imobiliários'
+          content: 'Corretora Andréia Santos'
         },
         {
           property: 'og:title',
-          content: 'Fale Conosco | Andréia Negócios Imobiliários'
+          content: 'Fale Conosco | Corretora Andréia Santos'
         },
         {
           property: 'og:description',
