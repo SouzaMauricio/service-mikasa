@@ -41,7 +41,7 @@ export const getters = {
     showUpdatePrivacyPolicy: (state) => {
       if (!state.acceptedPrivacyPolicyDate && state.acceptedPrivacyPolicy) return true
       if (!state.acceptedPrivacyPolicyDate) return false
-      const lastUpdatePrivacyPolicyDate = '2022-08-09'
+      const lastUpdatePrivacyPolicyDate = '2022-11-15'
       return new Date(lastUpdatePrivacyPolicyDate) > new Date(state.acceptedPrivacyPolicyDate)
     } 
   }
