@@ -15,7 +15,7 @@
       <img
         :src="require('../assets/no-data-cuate.png')"
         class="h-96"
-        alt=""
+        alt="pagina-nao-encontrada"
       >
     </div>
   </div>

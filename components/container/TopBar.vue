@@ -8,6 +8,8 @@
       <button
         class="focus:outline-none "
         @click="showMenu = !showMenu"
+        name="abrir-fechar-menu"
+        id="abrir-fechar-menu"
       >
         <svg
           v-if="!showMenu"
@@ -44,11 +46,14 @@
     <NuxtLink
       to="/"
       class="flex md:hidden"
+      name="ir-para-tela-inicial"
+      id="ir-para-tela-inicial"
+      
     >
       <img
         src="../../assets/logo/logo_branco.png"
         class="h-12"
-        alt=""
+        alt="logo-andreia-santos"
       >
     </NuxtLink>
     <div
@@ -62,7 +67,7 @@
         <img
           src="../../assets/logo/logo_branco.png"
           class="h-12"
-          alt=""
+          alt="logo-topo-andreia-santos"
         >
       </NuxtLink>
       <NuxtLink

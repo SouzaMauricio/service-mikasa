@@ -12,6 +12,8 @@
         <button
           class="focus:outline-none"
           @click="close()"
+          name="fechar-alerta"
+          id="fechar-alerta"
         >
           <span class="text-xl icon-clear"></span>
         </button>

@@ -7,7 +7,7 @@
       <img
         :src="property.pictures[0].fullPath"
         class="object-cover w-full h-72"
-        alt=""
+        :alt="`imagem-principal-${property.title}`"
       >
     </div>
     
@@ -33,6 +33,8 @@
               v-if="$store.getters.isFavorited(property.cod)"
               @click.stop="removeFavorite()"
               class="flex items-center justify-center p-1 rounded-full hover:bg-gray-100"
+              name="remover-dos-favoritos"
+              id="remover-dos-favoritos"
             >
               <span class="icon-favorite">
               </span>
@@ -41,6 +43,8 @@
               v-else
               @click.stop="addToFavorite()"
               class="flex items-center justify-center p-1 rounded-full hover:bg-gray-100"
+              name="adicionar-aos-favoritar"
+              id="adicionar-aos-favoritar"
             >
               <span class="icon-favorite_outline"></span>
             </button>

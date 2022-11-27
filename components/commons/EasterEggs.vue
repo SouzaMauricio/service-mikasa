@@ -6,7 +6,7 @@
     <img
       class="h-60"
       :src="require('../../assets/its_friday.gif')"
-      alt=""
+      alt="snoop-dog"
     >
   </div>
 </template>

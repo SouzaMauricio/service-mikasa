@@ -39,7 +39,7 @@
       <img
         :src="require('../../assets/no-data-pana.png')"
         class="w-96"
-        alt=""
+        alt="nenhum-imovel-favoritado"
       >
     </div>
   </div>

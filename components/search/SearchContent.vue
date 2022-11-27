@@ -42,6 +42,7 @@
         <button
           class="hidden px-8 py-1 text-white rounded-full bg-annie-primary hover:opacity-80 md:block"
           @click="doSearch()"
+          name="buscar-imoveis"
         >
           Buscar
         </button>
@@ -53,6 +54,8 @@
           <button
             class="flex items-center justify-between space-x-1 font-medium w-22 whitespace-nowrap"
             @click="showFilters = !showFilters"
+            name="mostrar-ocultar-filtros"
+            id="mostrar-ocultar-filtros"
           >
             <span>
               Filtrar
@@ -261,6 +264,8 @@
                   <button
                     class="w-full p-2 font-medium text-white rounded-md shadow-md bg-annie-primary"
                     @click="doSearch()"
+                    name="aplicar-filtros"
+                    id="aplicar-filtros"
                   >
                     Aplicar filtros
                   </button>
@@ -272,6 +277,7 @@
         <button
           class="block px-8 py-1 text-white rounded-full bg-annie-primary hover:opacity-80 md:hidden"
           @click="doSearch()"
+          name="buscar-imoveis"
         >
           Buscar
         </button>
@@ -289,7 +295,7 @@
       <img
         :src="require('../../assets/no-data-pana.png')"
         class="w-96"
-        alt=""
+        alt="nenhum-resultado"
       >
     </div>
     <div
@@ -335,28 +341,28 @@ export default {
       meta: [
         //Google
         {
-          itemprop: 'name',
+          name: 'name',
           content: 'Corretora Andréia Santos'
         },
         {
-          itemprop: 'description',
+          name: 'description',
           content: 'Não vendemos apenas imóveis, realizamos sonhos e projetos de vida.'
         },
         //Whataspp/Facebook
         {
-          property: 'og:site_name',
+          name: 'og:site_name',
           content: 'Corretora Andréia Santos'
         },
         {
-          property: 'og:title',
+          name: 'og:title',
           content: this.getPageTitle()
         },
         {
-          property: 'og:description',
+          name: 'og:description',
           content: 'Não vendemos apenas imóveis, realizamos sonhos e projetos de vida.'
         },
         {
-          property: 'og:type',
+          name: 'og:type',
           content: 'website'
         }
         // {

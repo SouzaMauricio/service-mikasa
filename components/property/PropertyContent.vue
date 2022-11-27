@@ -28,7 +28,7 @@
           <img
             class="w-96"
             :src="require('../../assets/no-data-rafiki.png')"
-            alt=""
+            alt="propriedade-indisponivel"
           >
         </div>
       </div>
@@ -59,6 +59,7 @@
                     class="object-cover w-full h-full"
                     :src="picture.fullPath"
                     @click="showImageListModal(index)"
+                    :alt="`${property.title}-${index}`"
                   />
                 </div>
               </flickity>
@@ -165,6 +166,8 @@
                 v-if="$store.getters.isFavorited(property.cod)"
                 @click="removeFavorite()"
                 class="flex items-center justify-center p-1 space-x-0 rounded-full sm:space-x-2 lg:space-x-0 xl:space-x-2 hover:bg-gray-100"
+                name="remover-dos-favoritos"
+                id="remover-dos-favoritos"
               >
                 <span
                   class="hidden sm:block lg:hidden xl:block"
@@ -178,6 +181,8 @@
                 v-else
                 @click="addToFavorite()"
                 class="flex items-center justify-center p-1 space-x-0 rounded-full sm:space-x-2 lg:space-x-0 xl:space-x-2 hover:bg-gray-100"
+                name="adicionar-aos-favoritos"
+                id="adicionar-aos-favoritos"
               >
                 <span
                   class="hidden sm:block lg:hidden xl:block"
@@ -193,6 +198,8 @@
               <button
                 class="flex items-center justify-center p-1 space-x-0 rounded-full sm:space-x-2 lg:space-x-0 xl:space-x-2 hover:bg-gray-100"
                 @click="copyUrl()"
+                name="compartilhar"
+                id="compartilhar"
               >
                 <span
                   class="hidden sm:block lg:hidden xl:block"
@@ -335,6 +342,8 @@
             <button
               class="flex items-center justify-center w-24 px-6 py-1 text-white rounded-full bg-annie-primary hover:opacity-90 disabled:opacity-75"
               @click="makeAContact()"
+              name="enviar-interesse"
+              id="enviar-interesse"
             >
               <span
                 v-if="sendingContact"
@@ -478,7 +487,7 @@
                 <img
                   class="z-10 object-cover w-24 h-24 rounded-md min-w-[6rem]"
                   :src="unit.image ? unit.image.fullPath : require('../../assets/no_picture.jpg')"
-                  alt=""
+                  :alt="`unidade-${unit.area}-metros`"
                 >
                 <div
                   class="absolute top-0 z-30 flex items-center justify-center w-24 h-24 bg-black opacity-30"
@@ -708,6 +717,8 @@
           >
             <button
               @click="showUnitImage.show = false"
+              name="ocultar-imagem-unidade"
+              id="ocultar-imagem-unidade"
             >
               <span class="text-3xl icon-clear" ></span>
             </button>
@@ -718,7 +729,7 @@
             <img
               class="w-125"
               :src="showUnitImage.image"
-              alt=""
+              alt="imagem-unidade-ampliada"
             >
           </div>
         </div>
@@ -757,32 +768,32 @@ export default {
       meta: [
         //Google
         {
-          itemprop: 'name',
+          name: 'name',
           content: 'Corretora Andréia Santos'
         },
         {
-          itemprop: 'description',
+          name: 'description',
           content: this.property.description
         },
         //Whataspp/Facebook
         {
-          property: 'og:site_name',
+          name: 'og:site_name',
           content: 'Corretora Andréia Santos'
         },
         {
-          property: 'og:title',
+          name: 'og:title',
           content: this.property.title + ' | Corretora Andréia Santos'
         },
         {
-          property: 'og:description',
+          name: 'og:description',
           content: this.property.description
         },
         {
-          property: 'og:type',
+          name: 'og:type',
           content: 'website'
         },
         {
-          property: 'og:image',
+          name: 'og:image',
           content: this.property.pictures[0].fullPath
         }
       ]

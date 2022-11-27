@@ -10,6 +10,8 @@
         class="px-2 py-3 font-medium hover:bg-gray-50 md:px-4 whitespace-nowrap"
         :class="typeOfSearch === 'comprar' ? 'border-b-2 border-annie-primary text-annie-primary' : 'text-gray-500'"
         @click="typeOfSearch = 'comprar'"
+        name="selecionar-comprar"
+        id="selecionar-comprar"
       >
         Quero Comprar
       </button>
@@ -18,6 +20,8 @@
         class="px-2 py-3 font-medium hover:bg-gray-50 md:px-4 whitespace-nowrap"
         :class="typeOfSearch === 'alugar' ? 'border-b-2 border-annie-primary text-annie-primary' : 'text-gray-500'"
         @click="typeOfSearch = 'alugar'"
+        name="selecionar-alugarr"
+        id="selecionar-alugar"
       >
         Quero Alugar
       </button>
@@ -54,6 +58,7 @@
       <button
         class="hidden px-8 py-1 text-white rounded-full bg-annie-primary hover:opacity-80 md:block"
         @click="redirectToSearch()"
+        name="buscar-imoveis"
       >
         Buscar
       </button>
@@ -64,6 +69,8 @@
       <button
         class="flex items-center space-x-4 font-medium"
         @click="showFilters = !showFilters"
+        name="mostrar-ocultar-filtros"
+        id="mostrar-ocultar-filtros"
       >
         <span>
           Filtrar
@@ -76,6 +83,7 @@
       <button
         class="block px-8 py-1 text-white rounded-full bg-annie-primary hover:opacity-80 md:hidden"
         @click="redirectToSearch()"
+        name="buscar-imoveis"
       >
         Buscar
       </button>
@@ -227,7 +235,7 @@
             @click="checkGarages('2')"
           />
           <label
-            class="flex items-center justify-center w-8 h-8 text-sm font-medium transition-colors border border-gray-100 rounded-full shadow-sm cursor-pointer peer-checked:border-annie-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-annie-primary peer-checked:bg-annie-primary"
+            class="flex items-center justify-center w-8 h-8 text-sm font-medium transition-colors border border-gray-100 rounded-full shadow-sm cursor-pointer peer-checked:border-annie-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-annie-primary"
             for="garages_2"
           >
             <span>2</span>

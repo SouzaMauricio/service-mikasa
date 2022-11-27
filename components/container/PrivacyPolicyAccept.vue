@@ -20,6 +20,8 @@
       <button
         class="px-4 py-2 font-medium bg-white rounded-md shadow-sm text-annie-text"
         @click="acceptPrivacyPolicy()"
+        name="aceitar-termos"
+        id="aceitar-termos"
       >
         Entendi!
       </button>

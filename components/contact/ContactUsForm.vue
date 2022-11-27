@@ -135,6 +135,8 @@
             <button
               class="flex items-center justify-center w-24 px-6 py-1 text-white rounded-full bg-annie-primary hover:opacity-90 disabled:opacity-75"
               @click="makeAContact()"
+              name="enviar-solicitacao-de-contato"
+              id="enviar-solicitacao-de-contato"
             >
               <span
                 v-if="sendingContact"

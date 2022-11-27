@@ -20,28 +20,28 @@ export default {
       meta: [
         //Google
         {
-          itemprop: 'name',
+          name: 'name',
           content: 'Corretora Andréia Santos'
         },
         {
-          itemprop: 'description',
+          name: 'description',
           content: 'Fale Conosco'
         },
         //Whataspp/Facebook
         {
-          property: 'og:site_name',
+          name: 'og:site_name',
           content: 'Corretora Andréia Santos'
         },
         {
-          property: 'og:title',
+          name: 'og:title',
           content: 'Fale Conosco | Corretora Andréia Santos'
         },
         {
-          property: 'og:description',
+          name: 'og:description',
           content: 'Fale Conosco'
         },
         {
-          property: 'og:type',
+          name: 'og:type',
           content: 'website'
         }
         // {

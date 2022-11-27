@@ -20,28 +20,28 @@ export default {
       meta: [
         //Google
         {
-          itemprop: 'name',
+          name: 'name',
           content: 'Corretora Andréia Santos'
         },
         {
-          itemprop: 'description',
+          name: 'description',
           content: 'Política de Privacidade'
         },
         //Whataspp/Facebook
         {
-          property: 'og:site_name',
+          name: 'og:site_name',
           content: 'Corretora Andréia Santos'
         },
         {
-          property: 'og:title',
+          name: 'og:title',
           content: 'Política de Privacidade | Corretora Andréia Santos'
         },
         {
-          property: 'og:description',
+          name: 'og:description',
           content: 'Política de Privacidade'
         },
         {
-          property: 'og:type',
+          name: 'og:type',
           content: 'website'
         }
         // {

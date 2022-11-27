@@ -16,10 +16,32 @@ export default {
     return {
       title: 'Corretora Andréia Santos',
       meta: [
+        //Google
+        {
+          name: 'name',
+          content: 'Corretora Andréia Santos'
+        },
         {
           hid: 'description',
           name: 'description',
           content: 'Não vendemos apenas imóveis, realizamos sonhos e projetos de vida.'
+        },
+        //Whataspp/Facebook
+        {
+          name: 'og:site_name',
+          content: 'Corretora Andréia Santos'
+        },
+        {
+          name: 'og:title',
+          content: 'Corretora Andréia Santos'
+        },
+        {
+          name: 'og:description',
+          content: 'Não vendemos apenas imóveis, realizamos sonhos e projetos de vida.'
+        },
+        {
+          name: 'og:type',
+          content: 'website'
         }
       ]
     }

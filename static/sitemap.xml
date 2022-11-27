@@ -5,14 +5,6 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.corretoraandreia.com.br/comprar?search=barueri</loc>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://www.corretoraandreia.com.br/comprar?search=novare%20alphaville</loc>
-      <priority>1.0</priority>
-   </url>
-   <url>
       <loc>https://www.corretoraandreia.com.br/lancamentos</loc>
       <priority>0.8</priority>
    </url>
@@ -21,11 +13,35 @@
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://www.corretoraandreia.com.br/imovel/AP22101</loc>
+      <loc>https://www.corretoraandreia.com.br/comprar?search=barueri</loc>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.corretoraandreia.com.br/imovel/novare-alphaville-AP22101</loc>
+      <loc>https://www.corretoraandreia.com.br/comprar?search=novare%20alphaville</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.corretoraandreia.com.br/imovel/acqua-park-barueri---apartamentos-2-e-3-dormitorios-em-barueri-RL22103</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.corretoraandreia.com.br/imovel/acqua-park-bethaville---apartamentos-de-1-e-2-dormitorios-no-bethaville-RL22104</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.corretoraandreia.com.br/imovel/gran-alphaville---apartamentos-com-3-suites-sport-home-residence-RL22105</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.corretoraandreia.com.br/imovel/infinity-alphaville---apartamentos-de-2-a-4-suites-luxo-e-sofisticacao-em-um-unico-lugar-RL22106</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.corretoraandreia.com.br/imovel/novare-alphaville---apartamentos-2-dormitorios-1-suite-no-18-do-forte-AP22101</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.corretoraandreia.com.br/imovel/codominio-primavera---apartamento-com-2-dormitorios-em-carapicuiba-AP22117</loc>
       <priority>1.0</priority>
    </url>
 </urlset>

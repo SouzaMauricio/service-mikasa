@@ -9,14 +9,12 @@
       <img
         src="../../assets/main/9.jpeg"
         class="object-cover w-full h-40 md:h-72 lg:h-96"
-        alt=""
+        alt="acqua-park-barueri"
       >
       <div
         class="z-0 w-3/4 h-48 my-0 -mt-24 lg:w-1/2"
       >
-        <SearchGeneral
-          class=""
-        />
+        <SearchGeneral />
       </div>
     </div>
 

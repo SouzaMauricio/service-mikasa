@@ -11,27 +11,33 @@
         <img
           :src="require('../../assets/logo/logo_branco.png')"
           class="h-20"
-          alt=""
+          alt="logo-footer-andreia-santos"
         >
 
         <div
           class="flex justify-between px-4 pt-2 text-2xl text-annie-second"
         >
           <a
-            href="https://www.facebook.com/andreianegociosimobiliarioss"
+            href="https://www.facebook.com/andreiasantoscorretoradeimoveis"
             target="_blank"
+            name="abrir-facebook"
+            id="abrir-facebook"
           >
             <span class="icon-facebook2"></span>
           </a>
           <a
-            href="https://www.instagram.com/andreianegociosimobiliarios/"
+            href="https://www.instagram.com/andreiasantoscorretoraimoveis/"
             target="_blank"
+            name="abrir-instagram"
+            id="abrir-instagram"
           >
             <span class="icon-instagram"></span>
           </a>
           <a
             href="https://api.whatsapp.com/send?phone=5511943394782&text=Ol%C3%A1,%20gostaria%20de%20ajuda%20para%20encontar%20um%20im%C3%B3vel!"
             target="_blank"
+            name="abrir-whatsapp"
+            id="abrir-whatsapp"
           >
             <span class="icon-whatsapp"></span>
           </a>
